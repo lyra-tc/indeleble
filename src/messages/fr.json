@@ -1,0 +1,139 @@
+{
+  "localeSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, es {🇪🇸 Español} en {🇬🇧 English} de {🇩🇪 Deutsch} fr {🇫🇷 Français} other {Unknown}}"
+  },
+  "buttonLanguage": {
+    "Spanish": "Espagnol",
+    "English": "Anglais",
+    "German": "Allemand",
+    "French": "Français"
+  },
+  "profileCard": {
+    "position": "Développeur Logiciel - Lyra Tech"
+  },
+  "contactCard": {
+    "whatsApp": "Me contacter via WhatsApp",
+    "mail": "Me contacter par e-mail",
+    "qrCode": "Partager la carte",
+    "shareCard": "Partagez cette carte",
+    "website": "Aller sur notre site",
+    "scanCode": "Scannez ce code avec votre caméra ou une appli QR",
+    "close": "Fermer"
+  },
+  "comingsoon": {
+    "title": "Lyra Tech",
+    "subtitle": "Ta vision en code",
+    "description": "Nous préparons quelque chose d’épique. Nous allons révolutionner la technologie... et tu en feras partie.",
+    "button": "Bientôt"
+  },
+  "navbar": {
+    "home": "Accueil",
+    "aboutUs": "À propos",
+    "services": "Services",
+    "portafolio": "Portfolio",
+    "contact": "Contactez-nous",
+    "homeLink": "#home",
+    "aboutUsLink": "#about-us",
+    "servicesLink": "#services",
+    "portafolioLink": "#portfolio",
+    "contactLink": "#contact"
+  },
+  "heroHome": {
+    "title": "Nous concevons des solutions qui comprennent votre entreprise",
+    "subtitle": "Du problème à la mise en œuvre, nous avançons avec vous.",
+    "buttonContact1": "Parlez-nous de votre idée",
+    "buttonContact2": "Planifiez un appel"
+  },
+  "aboutUsHome": {
+    "titleCard1": "À propos de nous",
+    "descriptionCard1": "Chez LyraTech, nous créons des logiciels qui inspirent, en alliant design, rapidité et fonctionnalité. Né d’une équipe passionnée, nous sommes aujourd’hui une référence en solutions numériques qui dépassent les attentes et génèrent des résultats concrets.",
+    "buttonCard1": "Notre Équipe",
+    "titleCard2": "Parcours",
+    "descriptionCard2": "Depuis nos premiers projets jusqu’à aujourd’hui, nous avons grandi aux côtés de nos clients, perfectionnant chaque ligne de code et chaque design. Notre expérience nous pousse à innover sans perdre l’essence qui nous rend uniques.",
+    "buttonCard2": "Notre Histoire"
+  },
+  "servicesHome": {
+    "title": "Solutions sur mesure",
+    "description": "Vos idées méritent plus que du simple code. C’est pourquoi nous avons créé LyraTech : une approche agile, axée sur le design, pensée pour faire passer vos produits numériques au niveau supérieur.",
+    "serviceTitle1": "Développement logiciel",
+    "serviceItems1_0": "Développement 100% personnalisé",
+    "serviceItems1_1": "Technologie et stack adaptés à votre projet",
+    "serviceItems1_2": "Accompagnement tout au long du processus",
+    "serviceItems1_3": "Réunions d’avancement",
+    "serviceItems1_4": "Support et maintenance de base",
+    "serviceItems1_5": "Livrables et documentation claire",
+    "serviceItems1_6": "Évolutivité et mises à jour",
+    "serviceTitle2": "Consultation",
+    "serviceItems2_0": "Audit et analyse des besoins",
+    "serviceItems2_1": "Conception d’architecture technique",
+    "serviceItems2_2": "Stratégie technologique et feuille de route",
+    "serviceItems2_3": "Révision de faisabilité et d’évolutivité",
+    "serviceItems2_4": "Conseils sur stack et outils",
+    "serviceItems2_5": "Réunions de suivi et recommandations",
+    "serviceItems2_6": "Documentation technique claire",
+    "serviceTitle3": "Intégration de l’IA",
+    "serviceItems3_0": "Identification des cas d’usage de l’IA",
+    "serviceItems3_1": "Intégration des outils IA existants",
+    "serviceItems3_2": "Automatisation des processus avec l’IA",
+    "serviceItems3_3": "Formation et accompagnement de l’équipe",
+    "serviceItems3_4": "Support pour l’adoption et la mise en service",
+    "serviceItems3_5": "Support technique et ajustements",
+    "serviceItems3_6": "Documentation d’utilisation",
+    "button": "Plus d’informations"
+  },
+  "portafolioHome": {
+    "title": "PROJETS RÉUSSIS",
+    "description": "Chaque projet est une histoire de succès. Découvrez comment nous avons transformé des idées en solutions numériques qui dépassent les attentes.",
+    "viewMore": "Voir plus",
+    "avalia": "Site web d’entreprise pour clinique dentaire",
+    "mindScope": "Application web de tests psychométriques",
+    "nuovaVita": "Site web d’entreprise pour gestion de copropriétés",
+    "plenusHopeMun": "Site web de Modèle des Nations Unies pour établissement scolaire",
+    "pulsoVital": "Plateforme web de formation en finances",
+    "verderaiz": "Site web et blog avec tableau de bord pour organisation écologique",
+    "onceUponATime": "Site web d'une entreprise de voyage",
+    "callToActionTitle": "Prêt pour le prochain projet réussi?",
+    "callToActionText": "Transformons votre idée en une solution numérique qui dépasse toutes vos attentes.",
+    "callToActionButton": "Lancer Votre Projet"
+  },
+  "helpAndSupportHome": {
+    "title": "Aide et Support",
+    "subtitle": "Nous sommes là pour vous aider à chaque étape. Notre équipe de support technique est disponible quand vous en avez besoin.",
+    "availability": "Disponibilité :",
+    "responseTime": "Délai de réponse :",
+    "titleWhatsApp": "Chat WhatsApp",
+    "descriptionWhatsApp": "Obtenez une assistance immédiate de notre équipe de support technique",
+    "availabilityWhatsApp": "Lun-Ven",
+    "responseTimeWhatsApp": "<5 min",
+    "buttonTextWhatsApp": "Démarrer le chat",
+    "titleMail": "Support par Email",
+    "descriptionMail": "Envoyez votre demande détaillée et recevez une réponse complète",
+    "availabilityMail": "Lun-Ven",
+    "responseTimeMail": "<2 heures",
+    "buttonTextMail": "Envoyer un email",
+    "titlePhone": "Appel Téléphonique",
+    "descriptionPhone": "Parlez directement avec nos experts techniques",
+    "availabilityPhone": "9:00-18:00",
+    "responseTimePhone": "Immédiat",
+    "buttonTextPhone": "Appeler maintenant"
+  },
+  "footer": {
+    "description": "Nous créons des logiciels extraordinaires avec un design impeccable, une vitesse supérieure et une fonctionnalité parfaite. Votre succès numérique est notre mission.",
+    "location": "Querétaro, Mexique",
+    "company": "Entreprise",
+    "company1": "À propos de nous",
+    "company2": "Notre équipe",
+    "company3": "Portefeuille",
+    "services": "Services",
+    "services1": "Développement Web",
+    "services2": "Applications Mobiles",
+    "services3": "Conseil",
+    "services4": "Intégration IA",
+    "resources": "Ressources",
+    "resources1": "Support",
+    "resources2": "FAQ",
+    "resources3": "Contact",
+    "copyright": "© 2025 LyraTech. Tous droits réservés."
+  }
+}

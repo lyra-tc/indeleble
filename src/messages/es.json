@@ -1,0 +1,139 @@
+{
+  "localeSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, es {🇪🇸 Español} en {🇬🇧 English} de {🇩🇪 Deutsch} fr {🇫🇷 Français} other {Unknown}}"
+  },
+  "buttonLanguage": {
+    "Spanish": "Español",
+    "English": "Inglés",
+    "German": "Alemán",
+    "French": "Francés"
+  },
+  "profileCard": {
+    "position": "Desarrollador de Software - Lyra Tech"
+  },
+  "contactCard": {
+    "whatsApp": "Contactarme por WhatsApp",
+    "mail": "Contactarme por Correo",
+    "qrCode": "Compartir Tarjeta",
+    "shareCard": "Comparte esta tarjeta",
+    "website": "Ir a nuestro sitio",
+    "scanCode": "Escanea este código con tu cámara o app de QR",
+    "close": "Cerrar"
+  },
+  "comingsoon": {
+    "title": "Lyra Tech",
+    "subtitle": "Tu visión en código",
+    "description": "Estamos preparando algo épico. Revolucionaremos la tecnología... y tú serás parte de ello.",
+    "button": "Próximamente"
+  },
+  "navbar": {
+    "home": "Inicio",
+    "aboutUs": "Nosotros",
+    "services": "Servicios",
+    "portafolio": "Portafolio",
+    "contact": "Contáctanos",
+    "homeLink": "#home",
+    "aboutUsLink": "#about-us",
+    "servicesLink": "#services",
+    "portafolioLink": "#portfolio",
+    "contactLink": "#contact"
+  },
+  "heroHome": {
+    "title": "Construimos soluciones que entienden tu negocio",
+    "subtitle": "Desde el problema hasta la implementación, caminamos contigo.",
+    "buttonContact1": "Cuéntanos tu idea",
+    "buttonContact2": "Agenda una llamada"
+  },
+  "aboutUsHome": {
+    "titleCard1": "Nosotros",
+    "descriptionCard1": "En LyraTech creamos software que inspira, combinando diseño, velocidad y funcionalidad. Nacimos de un equipo apasionado y hoy somos referencia en soluciones digitales que superan expectativas e impulsan resultados reales.",
+    "buttonCard1": "Nuestro Equipo",
+    "titleCard2": "Trayectoria",
+    "descriptionCard2": "Desde nuestros primeros proyectos hasta hoy, hemos crecido junto a nuestros clientes, perfeccionando cada línea de código y cada diseño. Nuestra experiencia nos impulsa a innovar sin perder la esencia que nos hace únicos.",
+    "buttonCard2": "Nuestra Historia"
+  },
+  "servicesHome": {
+    "title": "Soluciones a tu medida",
+    "description": "Tus ideas merecen más que solo código. Por eso creamos LyraTech: un enfoque ágil, centrado en el diseño y pensado para llevar tus productos digitales al siguiente nivel.",
+    "serviceTitle1": "Desarrollo de software",
+    "serviceItems1_0": "Desarrollo 100% a medida",
+    "serviceItems1_1": "Tecnología y stack adaptado a tu proyecto",
+    "serviceItems1_2": "Acompañamiento en todo el proceso",
+    "serviceItems1_3": "Reuniones de avance",
+    "serviceItems1_4": "Soporte y mantenimiento básico",
+    "serviceItems1_5": "Entregables y documentación clara",
+    "serviceItems1_6": "Escalabilidad y actualizaciones",
+    "serviceTitle2": "Consultoría",
+    "serviceItems2_0": "Auditoría y análisis de requerimientos",
+    "serviceItems2_1": "Diseño de arquitectura técnica",
+    "serviceItems2_2": "Estrategia tecnológica y roadmap",
+    "serviceItems2_3": "Revisión de viabilidad y escalabilidad",
+    "serviceItems2_4": "Asesoría en stack y herramientas",
+    "serviceItems2_5": "Reuniones de seguimiento y recomendaciones",
+    "serviceItems2_6": "Documentación técnica clara",
+    "serviceTitle3": "Integración de IA",
+    "serviceItems3_0": "Identificación de casos de uso de IA",
+    "serviceItems3_1": "Integración de herramientas IA existentes",
+    "serviceItems3_2": "Automatización de procesos con IA",
+    "serviceItems3_3": "Capacitación y entrenamiento de equipo",
+    "serviceItems3_4": "Acompañamiento en adopción y puesta en marcha",
+    "serviceItems3_5": "Soporte técnico y ajustes",
+    "serviceItems3_6": "Documentación de uso",
+    "button": "Más información"
+  },
+  "portafolioHome": {
+    "title": "PROYECTOS EXITOSOS",
+    "description": "Cada proyecto es una historia de éxito. Descubre cómo hemos transformado ideas en soluciones digitales que superan expectativas.",
+    "viewMore": "Ver más",
+    "avalia": "Sitio web corporativo para clínica dental",
+    "mindScope": "Aplicación web de pruebas psicométricas",
+    "nuovaVita": "Sitio web corporativo de administración de condominios",
+    "plenusHopeMun": "Sitio web de modelo de Naciones Unidas para institución educativa",
+    "pulsoVital": "Plataforma web de Capacitación en temas de finanzas",
+    "verderaiz": "Sitio web y Blog con dashboard para organización ecológica",
+    "onceUponATime": "Sitio web de empresa de viajes",
+    "callToActionTitle": "¿Listo para el siguiente proyecto exitoso?",
+    "callToActionText": "Transformemos tu idea en una solución digital que supere todas tus expectativas.",
+    "callToActionButton": "Inicia Tu Proyecto"
+  },
+  "helpAndSupportHome": {
+    "title": "Ayuda y Soporte",
+    "subtitle": "Estamos aquí para ayudarte en cada paso del camino. Nuestro equipo de soporte técnico está disponible cuando lo necesites.",
+    "availability": "Disponibilidad:",
+    "responseTime": "Tiempo de respuesta:",
+    "titleWhatsApp": "Chat vía WhatsApp",
+    "descriptionWhatsApp": "Obtén ayuda inmediata con nuestro equipo de soporte técnico",
+    "availabilityWhatsApp": "Lun-Vie",
+    "responseTimeWhatsApp": "<5 min",
+    "buttonTextWhatsApp": "Iniciar Chat",
+    "titleMail": "Soporte por Email",
+    "descriptionMail": "Envía tu consulta detallada y recibe una respuesta completa",
+    "availabilityMail": "Lun-Vie",
+    "responseTimeMail": "<2 horas",
+    "buttonTextMail": "Enviar Email",
+    "titlePhone": "Llamada Telefónica",
+    "descriptionPhone": "Habla directamente con nuestros expertos técnicos",
+    "availabilityPhone": "9:00-18:00",
+    "responseTimePhone": "Inmediato",
+    "buttonTextPhone": "Llamar Ahora"
+  },
+  "footer": {
+    "description": "Creamos software extraordinario con diseño impecable, velocidad superior y funcionalidad perfecta. Tu éxito digital es nuestra misión.",
+    "location": "Querétaro, México",
+    "company": "Empresa",
+    "company1": "Sobre Nosotros",
+    "company2": "Nuestro Equipo",
+    "company3": "Portafolio",
+    "services": "Servicios",
+    "services1": "Desarrollo Web",
+    "services2": "App Móviles",
+    "services3": "Consultoría",
+    "services4": "Integración de IA",
+    "resources": "Recursos",
+    "resources1": "Soporte",
+    "resources2": "FAQ's",
+    "resources3": "Contacto",
+    "copyright": "© 2025 LyraTech. Todos los derechos reservados."
+  }
+}

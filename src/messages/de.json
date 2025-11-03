@@ -1,0 +1,139 @@
+{
+  "localeSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, es {🇪🇸 Español} en {🇬🇧 English} de {🇩🇪 Deutsch} fr {🇫🇷 Français} other {Unknown}}"
+  },
+  "buttonLanguage": {
+    "Spanish": "Spanisch",
+    "English": "Englisch",
+    "German": "Deutsch",
+    "French": "Französisch"
+  },
+  "profileCard": {
+    "position": "Softwareentwickler - Lyra Tech"
+  },
+  "contactCard": {
+    "whatsApp": "Kontaktiere mich über WhatsApp",
+    "mail": "Kontaktiere mich per E-Mail",
+    "qrCode": "Karte teilen",
+    "shareCard": "Teile diese Karte",
+    "website": "Besuche unsere Website",
+    "scanCode": "Scanne diesen Code mit deiner Kamera oder QR-App",
+    "close": "Schließen"
+  },
+  "comingsoon": {
+    "title": "Lyra Tech",
+    "subtitle": "Deine Vision in Code",
+    "description": "Wir bereiten etwas Episches vor. Wir werden die Technologie revolutionieren... und du wirst ein Teil davon sein.",
+    "button": "Demnächst"
+  },
+  "navbar": {
+    "home": "Startseite",
+    "aboutUs": "Über uns",
+    "services": "Dienstleistungen",
+    "portafolio": "Portfolio",
+    "contact": "Kontakt",
+    "homeLink": "#home",
+    "aboutUsLink": "#about-us",
+    "servicesLink": "#services",
+    "portafolioLink": "#portfolio",
+    "contactLink": "#contact"
+  },
+  "heroHome": {
+    "title": "Wir entwickeln Lösungen, die dein Geschäft verstehen",
+    "subtitle": "Vom Problem bis zur Umsetzung – wir gehen den Weg mit dir.",
+    "buttonContact1": "Erzähl uns deine Idee",
+    "buttonContact2": "Vereinbare ein Gespräch"
+  },
+  "aboutUsHome": {
+    "titleCard1": "Über uns",
+    "descriptionCard1": "Bei LyraTech entwickeln wir Software, die inspiriert – mit Design, Geschwindigkeit und Funktionalität. Aus einem leidenschaftlichen Team entstanden, sind wir heute ein Maßstab für digitale Lösungen, die Erwartungen übertreffen und echte Ergebnisse liefern.",
+    "buttonCard1": "Unser Team",
+    "titleCard2": "Werdegang",
+    "descriptionCard2": "Von unseren ersten Projekten bis heute sind wir gemeinsam mit unseren Kunden gewachsen, haben jede Codezeile und jedes Design perfektioniert. Unsere Erfahrung treibt uns an, zu innovieren, ohne die Essenz zu verlieren, die uns einzigartig macht.",
+    "buttonCard2": "Unsere Geschichte"
+  },
+  "servicesHome": {
+    "title": "Maßgeschneiderte Lösungen",
+    "description": "Ihre Ideen verdienen mehr als nur Code. Deshalb haben wir LyraTech geschaffen: einen agilen, designorientierten Ansatz, um Ihre digitalen Produkte auf das nächste Level zu bringen.",
+    "serviceTitle1": "Softwareentwicklung",
+    "serviceItems1_0": "100% maßgeschneiderte Entwicklung",
+    "serviceItems1_1": "Technologie und Stack an Ihr Projekt angepasst",
+    "serviceItems1_2": "Begleitung während des gesamten Prozesses",
+    "serviceItems1_3": "Fortschrittsbesprechungen",
+    "serviceItems1_4": "Basis-Support und Wartung",
+    "serviceItems1_5": "Klare Ergebnisse und Dokumentation",
+    "serviceItems1_6": "Skalierbarkeit und Aktualisierungen",
+    "serviceTitle2": "Beratung",
+    "serviceItems2_0": "Prüfung und Anforderungsanalyse",
+    "serviceItems2_1": "Entwurf der technischen Architektur",
+    "serviceItems2_2": "Technologiestrategie und Roadmap",
+    "serviceItems2_3": "Überprüfung von Machbarkeit und Skalierbarkeit",
+    "serviceItems2_4": "Beratung zu Stack und Tools",
+    "serviceItems2_5": "Folgetreffen und Empfehlungen",
+    "serviceItems2_6": "Klare technische Dokumentation",
+    "serviceTitle3": "KI-Integration",
+    "serviceItems3_0": "Identifizierung von KI-Anwendungsfällen",
+    "serviceItems3_1": "Integration bestehender KI-Tools",
+    "serviceItems3_2": "Prozessautomatisierung mit KI",
+    "serviceItems3_3": "Schulung und Training des Teams",
+    "serviceItems3_4": "Begleitung bei Einführung und Inbetriebnahme",
+    "serviceItems3_5": "Technischer Support und Anpassungen",
+    "serviceItems3_6": "Nutzungsdokumentation",
+    "button": "Mehr Informationen"
+  },
+  "portafolioHome": {
+    "title": "ERFOLGREICHE PROJEKTE",
+    "description": "Jedes Projekt ist eine Erfolgsgeschichte. Entdecken Sie, wie wir Ideen in digitale Lösungen verwandelt haben, die Erwartungen übertreffen.",
+    "viewMore": "Mehr ansehen",
+    "avalia": "Unternehmenswebsite für Zahnklinik",
+    "mindScope": "Webanwendung für psychometrische Tests",
+    "nuovaVita": "Unternehmenswebsite für Wohnungsverwaltung",
+    "plenusHopeMun": "Model-United-Nations-Website für Bildungseinrichtung",
+    "pulsoVital": "Webplattform für Finanzschulungen",
+    "verderaiz": "Website und Blog mit Dashboard für Umweltorganisation",
+    "onceUponATime": "Website eines Reiseunternehmens",
+    "callToActionTitle": "Bereit für das nächste erfolgreiche Projekt?",
+    "callToActionText": "Lassen Sie uns Ihre Idee in eine digitale Lösung verwandeln, die alle Erwartungen übertrifft.",
+    "callToActionButton": "Projekt starten"
+  },
+  "helpAndSupportHome": {
+    "title": "Hilfe und Support",
+    "subtitle": "Wir sind hier, um Ihnen in jedem Schritt zu helfen. Unser technisches Supportteam steht Ihnen jederzeit zur Verfügung.",
+    "availability": "Verfügbarkeit:",
+    "responseTime": "Reaktionszeit:",
+    "titleWhatsApp": "WhatsApp-Chat",
+    "descriptionWhatsApp": "Erhalten Sie sofortige Unterstützung von unserem technischen Supportteam",
+    "availabilityWhatsApp": "Mo-Fr",
+    "responseTimeWhatsApp": "<5 Min",
+    "buttonTextWhatsApp": "Chat starten",
+    "titleMail": "E-Mail-Support",
+    "descriptionMail": "Senden Sie Ihre detaillierte Anfrage und erhalten Sie eine vollständige Antwort",
+    "availabilityMail": "Mo-Fr",
+    "responseTimeMail": "<2 Stunden",
+    "buttonTextMail": "E-Mail senden",
+    "titlePhone": "Telefonanruf",
+    "descriptionPhone": "Sprechen Sie direkt mit unseren technischen Experten",
+    "availabilityPhone": "9:00-18:00",
+    "responseTimePhone": "Sofort",
+    "buttonTextPhone": "Jetzt anrufen"
+  },
+  "footer": {
+    "description": "Wir entwickeln außergewöhnliche Software mit makellosem Design, überlegener Geschwindigkeit und perfekter Funktionalität. Ihr digitaler Erfolg ist unsere Mission.",
+    "location": "Querétaro, Mexiko",
+    "company": "Unternehmen",
+    "company1": "Über uns",
+    "company2": "Unser Team",
+    "company3": "Portfolio",
+    "services": "Dienstleistungen",
+    "services1": "Webentwicklung",
+    "services2": "Mobile Apps",
+    "services3": "Beratung",
+    "services4": "KI-Integration",
+    "resources": "Ressourcen",
+    "resources1": "Support",
+    "resources2": "FAQs",
+    "resources3": "Kontakt",
+    "copyright": "© 2025 LyraTech. Alle Rechte vorbehalten."
+  }
+}
