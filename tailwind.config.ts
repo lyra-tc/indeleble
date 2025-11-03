@@ -23,8 +23,13 @@ export default {
         "scale-in": "scaleIn 0.8s ease-out both",
         'spin-once': 'spin-once 0.5s linear forwards',
         slideInUp: 'slideInUp 0.5s ease-out forwards',
+        'menu-in': 'menu-in 100ms ease-out both',
       },
       keyframes: {
+        'menu-in': {
+          '0%':   { opacity: '0', transform: 'translateX(-16px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
@@ -56,6 +61,8 @@ export default {
         zendots: ['ZenDots-Regular'],
         montserrat: ['Montserrat-Regular'],
         "montserrat-bold": ['Montserrat-Bold'],
+        "dm-regular": ['DMSerifDisplay-Regular'],
+        "dm-italic": ['DMSerifDisplay-Italic'],
       },
     },
   },

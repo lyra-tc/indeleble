@@ -39,3 +39,12 @@ html {
   src: url('../../src/assets/fonts/Montserrat-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'DMSerifDisplay-Regular';
+  src: url('../../src/assets/fonts/DMSerifDisplay-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DMSerifDisplay-Italic';
+  src: url('../../src/assets/fonts/DMSerifDisplay-Italic.ttf') format('truetype');
+}
