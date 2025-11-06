@@ -19,7 +19,7 @@ function useIsMobile() {
 }
 
 const LINKS = [
-    { href: "/", label: "Inicio" },
+    { href: "#inicio", label: "Inicio" },
     { href: "#nosotros", label: "Nosotros" },
     { href: "#servicios", label: "Servicios" },
     { href: "#portafolio", label: "Portafolio" },

@@ -12,7 +12,6 @@ const BG_IMAGES = [BackgroundImage1, BackgroundImage2, BackgroundImage3];
 function HeroHome() {
     const [index, setIndex] = useState(0);
 
-    // auto-slide cada 10s
     useEffect(() => {
         const id = setInterval(() => {
             setIndex((i) => (i + 1) % BG_IMAGES.length);
@@ -21,7 +20,7 @@ function HeroHome() {
     }, []);
 
     return (
-        <div aria-label="Hero Home" className="relative w-screen mx-[calc(50%-50vw)] overflow-hidden min-h-[90vh] lg:min-h-screen">
+        <div aria-label="Hero Home" className="relative inset-0 overflow-hidden min-h-[90vh] lg:min-h-screen" id="inicio">
 
             {/* Slider Background */}
             <div className="absolute inset-0">
