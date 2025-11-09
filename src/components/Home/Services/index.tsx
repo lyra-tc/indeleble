@@ -103,7 +103,7 @@ function ServicesHome() {
     const realIndex = ((index - visible) % LEN + LEN) % LEN;
 
     return (
-        <div className="bg-black text-white font-dm-regular py-16 md:py-20 lg:py-16 px-10 md:px-16 lg:px-20 xl:px-32" id="services">
+        <div className="bg-black text-white font-dm-regular py-16 md:py-20 lg:py-16 px-10 md:px-16 lg:px-20 xl:px-32" id="servicios">
             {/* Título más ABAJO */}
             <h1 className="text-center text-7xl pt-8 -mb-7 lg:pt-0 lg:-mb-10 md:text-8xl lg:text-9xl xl:-mb-12 xl:text-[150px]">
                 Servicios
