@@ -6,7 +6,7 @@ export default function ComingSoonPage() {
         <div>
             <ComingSoon
                 title="PRÓXIMAMENTE"
-                subtitle="Experiencias, diseño y performance – sin atajos."
+                subtitle="Construyendo marcas con intención, estrategia y propósito."
                 launchDate="2025-12-01T00:00:00Z"
             />
         </div>
