@@ -4,7 +4,8 @@ import React from "react";
 import { FiArrowDownRight } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
-import Portafolio from "@/assets/images/Home/Portafolio/PortafolioImage.png";
+//import Portafolio from "@/assets/images/Home/Portafolio/PortafolioImage.png";
+import Portafolio from "@/assets/images/Home/Portafolio/Portafolio.jpg";
 import TopLeft from "@/assets/images/Home/Portafolio/TopLeft.png";
 import BottomRight from "@/assets/images/Home/Portafolio/BottomRight.png";
 
