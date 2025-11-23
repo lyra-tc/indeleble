@@ -17,12 +17,12 @@ function FormsHome() {
             </h2>
 
             <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/coming-soon" target="_blank" rel="noopener noreferrer">
+                <Link href="/formulario" target="_blank" rel="noopener noreferrer">
                     <button className="md:text-lg uppercase bg-black text-white px-8 py-3 rounded-full text-sm tracking-widest transition-all duration-200 hover:bg-white hover:text-black hover:scale-95 border border-black">
                         Proveedores
                     </button>
                 </Link>
-                <Link href="/coming-soon" target="_blank" rel="noopener noreferrer">
+                <Link href="/formulario" target="_blank" rel="noopener noreferrer">
                     <button className="md:text-lg uppercase bg-white text-black border border-black px-8 py-3 rounded-full text-sm tracking-widest transition-all duration-200 hover:bg-black hover:text-white hover:scale-95">
                         Freelancers
                     </button>
