@@ -1,70 +1,17 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../assets/images/Logo/logo-light.png";
-import MobileMenu from "../Navbar/MobileMenu";
-
-function useIsMobile() {
-    const [isMobile, setIsMobile] = useState(false);
-    useEffect(() => {
-        const mq = window.matchMedia("(max-width: 767px)");
-        const onChange = () => setIsMobile(mq.matches);
-        onChange();
-        mq.addEventListener?.("change", onChange);
-        return () => mq.removeEventListener?.("change", onChange);
-    }, []);
-    return isMobile;
-}
-
-const LINKS = [
-    { href: "#inicio", label: "Inicio" },
-    { href: "#nosotros", label: "Nosotros" },
-    { href: "#servicios", label: "Servicios" },
-    { href: "#portafolio", label: "Portafolio" },
-    { href: "#contacto", label: "Contacto" },
-];
 
 function Navbar() {
-    const isMobile = useIsMobile();
-
-    const [openDesktop, setOpenDesktop] = useState(false);
-    const [openMobile, setOpenMobile] = useState(false);
-    const [spinning, setSpinning] = useState(false);
-
-    // resetea el spin después de la anim (0.10s * 3 ≈ 300ms)
-    useEffect(() => {
-        if (!spinning) return;
-        const id = setTimeout(() => setSpinning(false), 400);
-        return () => clearTimeout(id);
-    }, [spinning]);
-
-    // lock scroll cuando el menú móvil esté abierto
-    useEffect(() => {
-        if (openMobile) {
-            const prev = document.body.style.overflow;
-            document.body.style.overflow = "hidden";
-            return () => {
-                document.body.style.overflow = prev;
-            };
-        }
-    }, [openMobile]);
-
-    const handleLogoClick = () => {
-        setSpinning(true);
-        if (isMobile) {
-            setOpenMobile(true);
-        } else {
-            setOpenDesktop((v) => !v);
-        }
-    };
 
     return (
         <div>
             {/* Logo fijo */}
             <nav aria-label="Logo" className="fixed z-50 top-[max(0px,env(safe-area-inset-top))] left-[max(0px,env(safe-area-inset-left))] p-4 md:p-8">
-                <button onClick={handleLogoClick} aria-label="Abrir menú principal" className="block focus:outline-none">
+                <button className="block focus:outline-none">
                     <Image
                         src={Logo}
                         alt="Logo"
