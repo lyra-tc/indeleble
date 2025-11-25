@@ -41,6 +41,42 @@ const SERVICES: Service[] = [
             "Tu nombre se vuelve marca; tu voz, referencia; tu presencia, autoridad.",
         ],
     },
+    {
+        title: "Podcast",
+        bullets: [
+            "Creación y producción completa del podcast.",
+            "Desarrollo de concepto, guion y línea editorial.",
+            "Grabación, edición y optimización de audio.",
+	        "Estrategia de distribución para posicionar la voz de la marca.",
+        ],
+    },
+    {
+        title: "Estrategia para redes sociales",
+        bullets: [
+            "Diseño de estrategia digital alineada a objetivos.",
+            "Creación de contenido de valor y storytelling.",
+            "Optimización para crecimiento orgánico y engagement.",
+            "Construcción y fortalecimiento de comunidad."
+        ],
+    },
+    {
+        title: "Diseño de página web",
+        bullets: [
+            "Desarrollo de sitios modernos y funcionales.",
+            "Diseño alineado a la identidad visual de la marca.",
+            "Arquitectura pensada para conversión y experiencia de usuario.",
+            "Implementación de secciones claras y navegación intuitiva."
+        ],
+    },
+    {
+        title: "Organización y creación de eventos",
+        bullets: [
+            "Conceptualización creativa del evento.",
+            "Planeación, logística y producción integral.",
+            "Creación de experiencias memorables y alineadas a la marca.",
+            "Fortalecimiento de relaciones y posicionamiento con la audiencia."
+        ],
+    },
 ];
 
 function ServicesHome() {
