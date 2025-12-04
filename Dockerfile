@@ -1,22 +1,36 @@
-# Etapa 1: Build
-FROM node:18-alpine AS builder
-
+# Stage 1: Dependencies
+FROM node:18-alpine AS deps
 WORKDIR /app
-
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm ci
 
+# Stage 2: Builder
+FROM node:18-alpine AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
 
-# Etapa 2: Run (servidor de producción)
-FROM node:18-alpine
-
+# Stage 3: Runner
+FROM node:18-alpine AS runner
 WORKDIR /app
 
-COPY --from=builder /app ./
-RUN npm install --omit=dev
+ENV NODE_ENV=production
+ENV PORT=3000
+
+# Create a non-root user
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+COPY --from=builder /app/public ./public
+
+# Automatically leverage output traces to reduce image size
+# https://nextjs.org/docs/advanced-features/output-file-tracing
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
