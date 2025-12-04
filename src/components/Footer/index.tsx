@@ -76,10 +76,10 @@ function Footer() {
                     <div className="space-y-4 flex flex-col items-center text-center md:text-left md:items-start">
                         <div className="space-y-1">
                             <a
-                                href="mailto:indeleble@indeleble.com" target="_blank"
+                                href="mailto:concierge@indeleble.com.mx" target="_blank"
                                 className="block text-white/90 hover:text-white transition-colors break-all"
                             >
-                                indeleble@indeleble.com
+                                concierge@indeleble.com.mx
                             </a>
                             <a
                                 href="tel:+524426767225" target="_blank"
