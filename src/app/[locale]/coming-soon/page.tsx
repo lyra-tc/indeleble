@@ -7,7 +7,7 @@ export default function ComingSoonPage() {
             <ComingSoon
                 title="PRÓXIMAMENTE"
                 subtitle="Construyendo marcas con intención, estrategia y propósito."
-                launchDate="2025-12-01T00:00:00Z"
+                launchDate="2025-12-31T00:00:00Z"
             />
         </div>
     );
