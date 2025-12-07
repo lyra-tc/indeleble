@@ -69,7 +69,7 @@ function Navbar() {
                         src={Logo}
                         alt="Logo"
                         priority
-                        className={`w-12 md:w-16 h-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]
+                        className={`w-12 md:w-16 h-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)] hover:animate-[spin-once_0.10s_linear_3]
                         ${spinning ? "animate-[spin-once_0.10s_linear_3]" : ""}`}
                     />
                 </button>
