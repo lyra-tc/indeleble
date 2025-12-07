@@ -2,12 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import BackgroundImage1 from "../../../assets/images/Home/Hero/Background1.png";
-import BackgroundImage2 from "../../../assets/images/Home/Hero/Background2.png";
-import BackgroundImage3 from "../../../assets/images/Home/Hero/Background3.jpeg";
+import BackgroundImage1 from "../../../assets/images/Home/Hero/Background2.png";
+import BackgroundImage2 from "../../../assets/images/Home/Hero/Background1.png";
+import BackgroundImage3 from "../../../assets/images/Home/Hero/Background2.png";
+import BackgroundImage4 from "../../../assets/images/Home/Hero/Background3.jpeg";
 import Titulo from "../../../assets/images/Home/Hero/Titulo.png";
 
-const BG_IMAGES = [BackgroundImage1, BackgroundImage2, BackgroundImage3];
+const BG_IMAGES = [BackgroundImage1, BackgroundImage2, BackgroundImage3, BackgroundImage4];
 
 function HeroHome() {
     const [index, setIndex] = useState(0);
@@ -15,7 +16,7 @@ function HeroHome() {
     useEffect(() => {
         const id = setInterval(() => {
             setIndex((i) => (i + 1) % BG_IMAGES.length);
-        }, 10000);
+        }, 2000);
         return () => clearInterval(id);
     }, []);
 

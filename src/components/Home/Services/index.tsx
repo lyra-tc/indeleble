@@ -14,7 +14,7 @@ type Service = { title: string; bullets: string[]; popular?: boolean };
 
 const SERVICES: Service[] = [
     {
-        title: "Videos Estratégicos de Alto Impacto",
+        title: "Videos Cortos para Empresas",
         popular: true,
         bullets: [
             "Capturamos atención en segundos y permanecemos en la memoria.",
@@ -24,7 +24,7 @@ const SERVICES: Service[] = [
         ],
     },
     {
-        title: "Contenido Vivo para Eventos y Activaciones",
+        title: "Levantamiento y Producción de Contenido",
         bullets: [
             "Tu evento se convierte en relato, presencia y marca.",
             "Capturamos esencia: energía, momentos clave, interacciones y propósito.",
@@ -33,7 +33,7 @@ const SERVICES: Service[] = [
         ],
     },
     {
-        title: "Posicionamiento y Dirección de Marca Personal (Speakers & Líderes)",
+        title: "Marca personal (Speakers & Líderes)",
         bullets: [
             "Convertimos tu mensaje en influencia.",
             "Discurso visual y narrativo claro, poderoso y reconocible.",
@@ -51,7 +51,7 @@ const SERVICES: Service[] = [
         ],
     },
     {
-        title: "Estrategia para redes sociales",
+        title: "Marketing digital",
         bullets: [
             "Diseño de estrategia digital alineada a objetivos.",
             "Creación de contenido de valor y storytelling.",
@@ -104,7 +104,7 @@ function ServicesHome() {
 
     const intervalRef = useRef<number | null>(null);
     const clearAuto = () => { if (intervalRef.current !== null) { window.clearInterval(intervalRef.current); intervalRef.current = null; } };
-    const startAuto = () => { clearAuto(); intervalRef.current = window.setInterval(() => { setTransitionMs(400); setIndex(i => i + 1); }, 3000); };
+    const startAuto = () => { clearAuto(); intervalRef.current = window.setInterval(() => { setTransitionMs(400); setIndex(i => i + 1); }, 10000); };
     useEffect(() => { startAuto(); return clearAuto; }, [visible]);
 
     const viewportRef = useRef<HTMLDivElement>(null);
