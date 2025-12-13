@@ -2,10 +2,23 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
+import Proyecto1 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_1.jpg";
+import Proyecto2 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_2.jpg";
+import Proyecto3 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_3.jpg";
+import Proyecto4 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_4.jpeg";
+import Proyecto5 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_5.jpg";
+import Proyecto6 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_6.jpeg";
+import Proyecto7 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_7.png";
+import Proyecto8 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_8.png";
+import Proyecto9 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_9.png";
+import Proyecto10 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_10.jpg";
+
+
 
 const categories = {
     todos: "Todos",
-    diseños: "Diseños",
+    disenios: "Diseños",
     eventos: "Eventos",
     redes: "Redes",
 } as const;
@@ -16,19 +29,21 @@ interface Project {
     id: number;
     title: string;
     category: CategoryKey;
-    image: string;
+    image: StaticImageData;
 }
 
 // Mock de proyectos - reemplazar con datos reales
 const projects: Project[] = [
-    { id: 1, title: "Diseño de marca", category: "diseños", image: "/images/project1.jpg" },
-    { id: 2, title: "The First Collection", category: "diseños", image: "/images/project2.jpg" },
-    { id: 3, title: "Pre-Black Friday Sale", category: "eventos", image: "/images/project3.jpg" },
-    { id: 4, title: "Your Marketing is not working", category: "redes", image: "/images/project4.jpg" },
-    { id: 5, title: "Art Collection", category: "diseños", image: "/images/project5.jpg" },
-    { id: 6, title: "Workspace Setup", category: "diseños", image: "/images/project6.jpg" },
-    { id: 7, title: "3 SIGNS Your Marketing", category: "redes", image: "/images/project7.jpg" },
-    { id: 8, title: "Pre-Black Friday Sale", category: "eventos", image: "/images/project8.jpg" },
+    { id: 1, title: "Podcast 1", category: "redes", image: Proyecto1 },
+    { id: 2, title: "Podcast 2", category: "redes", image: Proyecto2 },
+    { id: 3, title: "Evento 1", category: "eventos", image: Proyecto3 },
+    { id: 4, title: "Evento 2", category: "eventos", image: Proyecto4 },
+    { id: 5, title: "Video empresas 1", category: "redes", image: Proyecto5 },
+    { id: 6, title: "Video empresas 2", category: "redes", image: Proyecto6 },
+    { id: 7, title: "Estrategias 1", category: "redes", image: Proyecto7 },
+    { id: 8, title: "Pagina web 1", category: "disenios", image: Proyecto8 },
+    { id: 9, title: "Pagina web 2", category: "disenios", image: Proyecto9 },
+    { id: 10, title: "Evento 3", category: "eventos", image: Proyecto10 },
 ];
 
 function PortfolioComponent() {
@@ -75,11 +90,12 @@ function PortfolioComponent() {
                             key={project.id}
                             className="group relative overflow-hidden rounded-lg aspect-square md:aspect-video bg-white/10 cursor-pointer"
                         >
-                            <div className="w-full h-full bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center">
-                                <div className="text-center">
-                                    <p className="text-white/60 text-sm">{project.title}</p>
-                                </div>
-                            </div>
+                            <Image
+                                src={project.image}
+                                alt={project.title}
+                                fill
+                                className="object-cover group-hover:scale-110 transition-transform duration-300"
+                            />
                             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                 <p className="text-white font-semibold">{project.title}</p>
                             </div>
