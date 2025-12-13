@@ -81,7 +81,7 @@ function PortfolioComponent() {
             <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center px-4 py-12 md:py-16 lg:py-20">
                 {/* Título descriptivo */}
                 <div className="text-center mb-12 max-w-3xl">
-                    <p className="text-white text-sm md:text-base leading-relaxed">
+                    <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed">
                         Trabajos de los que estamos orgullosos: proyectos de branding, campañas digitales y diseños de imagen corporativa que reflejan nuestro compromiso con la creatividad y la excelencia.
                     </p>
                 </div>
