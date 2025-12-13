@@ -110,7 +110,7 @@ function PortfolioComponent() {
                     {pagedProjects.map((project) => (
                         <div
                             key={project.id}
-                            className="group relative overflow-hidden rounded-lg aspect-square md:aspect-video bg-white/10 cursor-pointer"
+                            className="group relative overflow-hidden rounded-none aspect-square md:aspect-video bg-white/10 cursor-pointer"
                         >
                             <Image
                                 src={project.image}
