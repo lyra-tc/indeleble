@@ -30,20 +30,20 @@ interface Project {
     title: string;
     category: CategoryKey;
     image: StaticImageData;
+    link: string;
 }
 
-// Mock de proyectos - reemplazar con datos reales
 const projects: Project[] = [
-    { id: 1, title: "Podcast 1", category: "redes", image: Proyecto1 },
-    { id: 2, title: "Podcast 2", category: "redes", image: Proyecto2 },
-    { id: 3, title: "Evento 1", category: "eventos", image: Proyecto3 },
-    { id: 4, title: "Evento 2", category: "eventos", image: Proyecto4 },
-    { id: 5, title: "Video empresas 1", category: "redes", image: Proyecto5 },
-    { id: 6, title: "Video empresas 2", category: "redes", image: Proyecto6 },
-    { id: 7, title: "Estrategias 1", category: "redes", image: Proyecto7 },
-    { id: 8, title: "Pagina web 1", category: "disenios", image: Proyecto8 },
-    { id: 9, title: "Pagina web 2", category: "disenios", image: Proyecto9 },
-    { id: 10, title: "Evento 3", category: "eventos", image: Proyecto10 },
+    { id: 1, title: "Podcast 1", category: "redes", image: Proyecto1, link: "https://www.instagram.com/reel/DJ2RuNOpjlZ/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" },
+    { id: 2, title: "Podcast 2", category: "redes", image: Proyecto2, link: "https://www.instagram.com/reel/DM0p7w8RHWj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+    { id: 3, title: "Evento 1", category: "eventos", image: Proyecto3, link: "https://www.instagram.com/reel/DJSnXvqpkIw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+    { id: 4, title: "Evento 2", category: "eventos", image: Proyecto4, link: "https://www.instagram.com/reel/DIPAaTNR_6M/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+    { id: 5, title: "Video empresas 1", category: "redes", image: Proyecto5, link: "https://www.instagram.com/reel/DM2imRSO2dV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+    { id: 6, title: "Video empresas 2", category: "redes", image: Proyecto6, link: "https://www.instagram.com/reel/DKZ7Pa6O9gc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+    { id: 7, title: "Estrategias 1", category: "redes", image: Proyecto7, link: "https://www.instagram.com/reel/DHWwKr0JZM0/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+    { id: 8, title: "Pagina web 1", category: "disenios", image: Proyecto8, link: "https://lyratech.com.mx/" },
+    { id: 9, title: "Pagina web 2", category: "disenios", image: Proyecto9, link: "https://coorider.com/" },
+    { id: 10, title: "Evento 3", category: "eventos", image: Proyecto10, link: "https://www.instagram.com/reel/DOy0lL7Ca4y/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
 ];
 
 function PortfolioComponent() {
@@ -108,9 +108,12 @@ function PortfolioComponent() {
                 {/* Grid de proyectos paginado */}
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-6 gap-y-10 mb-12">
                     {pagedProjects.map((project) => (
-                        <div
+                        <a
                             key={project.id}
-                            className="group relative overflow-hidden rounded-none aspect-square md:aspect-video bg-white/10 cursor-pointer"
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group relative overflow-hidden rounded-none aspect-square md:aspect-video bg-white/10 cursor-pointer block"
                         >
                             <Image
                                 src={project.image}
@@ -121,7 +124,7 @@ function PortfolioComponent() {
                             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                 <p className="text-white font-semibold">Ver más</p>
                             </div>
-                        </div>
+                        </a>
                     ))}
                 </div>
 
