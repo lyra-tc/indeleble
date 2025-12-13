@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import Proyecto1 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_1.jpg";
@@ -49,13 +49,35 @@ const projects: Project[] = [
 function PortfolioComponent() {
     const [activeCategory, setActiveCategory] = useState<CategoryKey>("todos");
 
-    const filteredProjects = activeCategory === "todos" 
-        ? projects 
+    // Nuevo estado para paginación
+    const itemsPerPage = 8; // Mostrar 8 elementos por página (4 filas si hay 2 columnas)
+    const [currentPage, setCurrentPage] = useState(0);
+
+    // Filtrado por categoría (sin paginar)
+    const filtered = activeCategory === "todos"
+        ? projects
         : projects.filter(p => p.category === activeCategory);
+
+    // Calcular número de páginas
+    const totalPages = Math.ceil(filtered.length / itemsPerPage);
+
+    // Ajustar currentPage si la categoría cambia o si el número de páginas cambia
+    useEffect(() => {
+        setCurrentPage(0);
+    }, [activeCategory]);
+
+    useEffect(() => {
+        if (currentPage >= totalPages) {
+            setCurrentPage(Math.max(0, totalPages - 1));
+        }
+    }, [totalPages, currentPage]);
+
+    // Proyectos a mostrar en la página current
+    const start = currentPage * itemsPerPage;
+    const pagedProjects = filtered.slice(start, start + itemsPerPage);
 
     return (
         <div aria-label="Portafolio de proyectos Indeleble" className="relative font-dm-regular min-h-screen bg-black overflow-hidden">
-
             <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center px-4 py-12 md:py-16 lg:py-20">
                 {/* Título descriptivo */}
                 <div className="text-center mb-12 max-w-3xl">
@@ -83,9 +105,9 @@ function PortfolioComponent() {
                     </div>
                 </div>
 
-                {/* Grid de proyectos */}
+                {/* Grid de proyectos paginado */}
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-12">
-                    {filteredProjects.map((project) => (
+                    {pagedProjects.map((project) => (
                         <div
                             key={project.id}
                             className="group relative overflow-hidden rounded-lg aspect-square md:aspect-video bg-white/10 cursor-pointer"
@@ -97,23 +119,27 @@ function PortfolioComponent() {
                                 className="object-cover group-hover:scale-110 transition-transform duration-300"
                             />
                             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <p className="text-white font-semibold">{project.title}</p>
+                                <p className="text-white font-semibold">Ver más</p>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                {/* Indicadores de paginación (opcional) */}
-                <div className="flex gap-2 justify-center">
-                    {[...Array(6)].map((_, i) => (
-                        <button
-                            key={i}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                i === 0 ? "bg-white w-8" : "bg-white/40"
-                            }`}
-                        />
-                    ))}
-                </div>
+                {/* Indicadores de paginación dinámicos */}
+                {totalPages > 1 && (
+                    <div className="flex gap-2 justify-center">
+                        {Array.from({ length: totalPages }).map((_, i) => (
+                            <button
+                                key={i}
+                                aria-label={`Ir a la página ${i + 1}`}
+                                onClick={() => setCurrentPage(i)}
+                                className={`transition-all duration-300 rounded-full ${
+                                    i === currentPage ? "bg-white w-8 h-2 rounded-md" : "bg-white/40 w-2 h-2"
+                                }`}
+                            />
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     );
