@@ -106,7 +106,7 @@ function PortfolioComponent() {
                 </div>
 
                 {/* Grid de proyectos paginado */}
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-12">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-6 gap-y-10 mb-12">
                     {pagedProjects.map((project) => (
                         <div
                             key={project.id}
