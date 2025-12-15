@@ -140,7 +140,7 @@ function PortfolioComponent() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="group relative overflow-hidden rounded-none bg-white/10 cursor-pointer block"
-                                        style={{ height: 200 }}
+                                        style={{ height: 260 }}
                                     >
                                         <Image
                                             src={left.image}
@@ -153,7 +153,7 @@ function PortfolioComponent() {
                                         </div>
                                     </a>
                                 ) : (
-                                    <div aria-hidden style={{ height: 200 }} />
+                                    <div aria-hidden style={{ height: 260 }} />
                                 )}
 
                                 {right ? (
@@ -163,7 +163,7 @@ function PortfolioComponent() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="group relative overflow-hidden rounded-none bg-white/10 cursor-pointer block"
-                                        style={{ height: 200 }}
+                                        style={{ height: 260 }}
                                     >
                                         <Image
                                             src={right.image}
@@ -176,7 +176,7 @@ function PortfolioComponent() {
                                         </div>
                                     </a>
                                 ) : (
-                                    <div aria-hidden style={{ height: 200 }} />
+                                    <div aria-hidden style={{ height: 260 }} />
                                 )}
                             </div>
                         );
