@@ -76,6 +76,21 @@ function PortfolioComponent() {
     const start = currentPage * itemsPerPage;
     const pagedProjects = filtered.slice(start, start + itemsPerPage);
 
+    // Agrupar en filas de 2
+    const rows: (Project | null)[][] = [];
+    for (let i = 0; i < pagedProjects.length; i += 2) {
+        const a = pagedProjects[i] ?? null;
+        const b = pagedProjects[i + 1] ?? null;
+        rows.push([a, b]);
+    }
+
+    const getRowRatios = (rowIndex: number) => {
+        const cycle = rowIndex % 3;
+        if (cycle === 0) return [1, 1]; // iguales
+        if (cycle === 1) return [3, 1]; // izquierda más grande
+        return [1, 3]; // derecha más grande
+    };
+
     return (
         <div aria-label="Portafolio de proyectos Indeleble" className="relative font-dm-regular min-h-screen bg-black overflow-hidden">
             <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center px-4 py-12 md:py-16 lg:py-20">
@@ -105,27 +120,67 @@ function PortfolioComponent() {
                     </div>
                 </div>
 
-                {/* Grid de proyectos paginado */}
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-6 gap-y-10 mb-12">
-                    {pagedProjects.map((project) => (
-                        <a
-                            key={project.id}
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group relative overflow-hidden rounded-none aspect-square md:aspect-video bg-white/10 cursor-pointer block"
-                        >
-                            <Image
-                                src={project.image}
-                                alt={project.title}
-                                fill
-                                className="object-cover group-hover:scale-110 transition-transform duration-300"
-                            />
-                            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <p className="text-white font-semibold">Ver más</p>
+                {/* Grid de proyectos paginado (pared de ladrillos) */}
+                <div className="w-full mb-12">
+                    {rows.map((row, rowIndex) => {
+                        const [left, right] = row;
+                        const [r1, r2] = getRowRatios(rowIndex);
+                        const sum = r1 + r2;
+                        const w1 = `${(r1 / sum) * 100}%`;
+                        const w2 = `${(r2 / sum) * 100}%`;
+                        return (
+                            <div
+                                key={rowIndex}
+                                style={{ display: "grid", gridTemplateColumns: `${w1} ${w2}`, gap: "1.5rem", marginBottom: "2.5rem" }}
+                            >
+                                {left ? (
+                                    <a
+                                        key={left.id}
+                                        href={left.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group relative overflow-hidden rounded-none bg-white/10 cursor-pointer block"
+                                        style={{ height: 200 }}
+                                    >
+                                        <Image
+                                            src={left.image}
+                                            alt={left.title}
+                                            fill
+                                            className="object-cover group-hover:scale-110 transition-transform duration-300"
+                                        />
+                                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <p className="text-white font-semibold">Ver más</p>
+                                        </div>
+                                    </a>
+                                ) : (
+                                    <div aria-hidden style={{ height: 200 }} />
+                                )}
+
+                                {right ? (
+                                    <a
+                                        key={right.id}
+                                        href={right.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group relative overflow-hidden rounded-none bg-white/10 cursor-pointer block"
+                                        style={{ height: 200 }}
+                                    >
+                                        <Image
+                                            src={right.image}
+                                            alt={right.title}
+                                            fill
+                                            className="object-cover group-hover:scale-110 transition-transform duration-300"
+                                        />
+                                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <p className="text-white font-semibold">Ver más</p>
+                                        </div>
+                                    </a>
+                                ) : (
+                                    <div aria-hidden style={{ height: 200 }} />
+                                )}
                             </div>
-                        </a>
-                    ))}
+                        );
+                    })}
                 </div>
 
                 {/* Indicadores de paginación dinámicos */}
