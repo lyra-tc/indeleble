@@ -93,7 +93,7 @@ function PortfolioComponent() {
 
     return (
         <div aria-label="Portafolio de proyectos Indeleble" className="relative font-dm-regular min-h-screen bg-black overflow-hidden">
-            <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center px-4 py-12 md:py-16 lg:py-20">
+            <div className="relative mx-auto flex min-h-screen max-w-4xl flex-col items-center px-4 py-12 md:py-16 lg:py-20">
                 {/* Título descriptivo */}
                 <div className="text-center mb-12 max-w-3xl">
                     <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed">
