@@ -41,7 +41,7 @@ function PortafolioHome() {
                         </h2>
 
                         <div className="mt-8 flex items-center justify-center">
-                            <Link href="/coming-soon" target="_blank" rel="noopener noreferrer"
+                            <Link href="/portafolio" target="_blank" rel="noopener noreferrer"
                                   className="inline-block">
                                 <button
                                     className="uppercase inline-flex items-center justify-center

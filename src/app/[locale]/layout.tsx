@@ -4,6 +4,7 @@ import {ReactNode} from 'react';
 import {locales} from '@/config';
 import "../globals.css";
 import {NextIntlClientProvider} from "next-intl";
+import type { Metadata } from 'next';
 
 type Props = {
     children: ReactNode;
@@ -17,7 +18,7 @@ export function generateStaticParams() {
 
 export const dynamic = 'force-dynamic'; // 🚀 Forzar actualización en cada render
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
     return {
         title: "Indeleble",
         description: "Indeleble website",
@@ -30,18 +31,15 @@ export async function generateMetadata() {
 
 
 
-export default async function LocaleLayout({children, params}: Props) {
-    // Enable static rendering
+export default async function LocaleLayout({ children, params }: Props) {
     const { locale } = await params;
     unstable_setRequestLocale(locale);
     const messages = await getMessages();
 
     return (
-
         <html className="h-full" lang={locale}>
-
         <body className={clsx('flex h-full flex-col')}>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages} locale={locale}>
             {children}
         </NextIntlClientProvider>
         </body>
