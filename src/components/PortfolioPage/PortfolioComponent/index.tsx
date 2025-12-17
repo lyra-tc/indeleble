@@ -13,8 +13,7 @@ import Proyecto7 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_7.p
 import Proyecto8 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_8.png";
 import Proyecto9 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_9.png";
 import Proyecto10 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_10.jpg";
-
-
+import type { CSSProperties } from "react";
 
 const categories = {
     todos: "Todos",
@@ -120,67 +119,77 @@ function PortfolioComponent() {
                     </div>
                 </div>
 
-                {/* Grid de proyectos paginado (pared de ladrillos) */}
-                <div className="w-full mb-12">
-                    {rows.map((row, rowIndex) => {
-                        const [left, right] = row;
-                        const [r1, r2] = getRowRatios(rowIndex);
-                        const sum = r1 + r2;
-                        const w1 = `${(r1 / sum) * 100}%`;
-                        const w2 = `${(r2 / sum) * 100}%`;
-                        return (
-                            <div
-                                key={rowIndex}
-                                style={{ display: "grid", gridTemplateColumns: `${w1} ${w2}`, gap: "1.5rem", marginBottom: "2.5rem" }}
-                            >
-                                {left ? (
-                                    <a
-                                        key={left.id}
-                                        href={left.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="group relative overflow-hidden rounded-none bg-white/10 cursor-pointer block"
-                                        style={{ height: 260 }}
-                                    >
-                                        <Image
-                                            src={left.image}
-                                            alt={left.title}
-                                            fill
-                                            className="object-cover group-hover:scale-110 transition-transform duration-300"
-                                        />
-                                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                            <p className="text-white font-semibold">Ver más</p>
-                                        </div>
-                                    </a>
-                                ) : (
-                                    <div aria-hidden style={{ height: 260 }} />
-                                )}
+                {/* Grid de proyectos paginado */}
+                <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 mb-12">
+                    <div className="flex flex-col gap-6 md:gap-7 lg:gap-10">
+                        {rows.map((row, rowIndex) => {
+                            const [left, right] = row;
+                            const [r1, r2] = getRowRatios(rowIndex);
 
-                                {right ? (
-                                    <a
-                                        key={right.id}
-                                        href={right.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="group relative overflow-hidden rounded-none bg-white/10 cursor-pointer block"
-                                        style={{ height: 260 }}
-                                    >
-                                        <Image
-                                            src={right.image}
-                                            alt={right.title}
-                                            fill
-                                            className="object-cover group-hover:scale-110 transition-transform duration-300"
-                                        />
-                                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                            <p className="text-white font-semibold">Ver más</p>
-                                        </div>
-                                    </a>
-                                ) : (
-                                    <div aria-hidden style={{ height: 260 }} />
-                                )}
-                            </div>
-                        );
-                    })}
+                            return (
+                                <div
+                                    key={rowIndex}
+                                    className="grid grid-cols-1 gap-4 sm:gap-6 md:[grid-template-columns:var(--cols)]"
+                                    style={{ "--cols": `${r1}fr ${r2}fr` } as CSSProperties}
+                                >
+                                    {/* LEFT */}
+                                    {left ? (
+                                        <a
+                                            href={left.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="group relative overflow-hidden bg-white/10 block w-full
+                         h-56 sm:h-64 md:h-72 lg:h-72"
+                                        >
+                                            <Image
+                                                src={left.image}
+                                                alt={left.title}
+                                                fill
+                                                className="object-cover group-hover:scale-110 transition-transform duration-300"
+                                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                            />
+                                            <div
+                                                className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                                <p className="text-white font-semibold border-2 border-white py-2 px-4 rounded-full">
+                                                    Ver más
+                                                </p>
+                                            </div>
+                                        </a>
+                                    ) : (
+                                        // En mobile/md no mostramos el hueco; en lg sí para conservar la rejilla
+                                        <div aria-hidden className="hidden md:block h-72"/>
+                                    )}
+
+                                    {/* RIGHT */}
+                                    {right ? (
+                                        <a
+                                            href={right.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="group relative overflow-hidden bg-white/10 block w-full
+                         h-56 sm:h-64 md:h-72 lg:h-72"
+                                        >
+                                            <Image
+                                                src={right.image}
+                                                alt={right.title}
+                                                fill
+                                                className="object-cover group-hover:scale-110 transition-transform duration-300"
+                                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                            />
+                                            <div
+                                                className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                                <p className="text-white font-semibold border-2 border-white py-2 px-4 rounded-full">
+                                                    Ver más
+                                                </p>
+                                            </div>
+                                        </a>
+                                    ) : (
+                                        <div aria-hidden className="hidden lg:block h-72"/>
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
 
                 {/* Indicadores de paginación dinámicos */}
