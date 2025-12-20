@@ -80,6 +80,30 @@ function PortfolioComponent() {
         return [1, 3]; // derecha más grande
     };
 
+    // animación/autoslider
+    const ANIMATION_DURATION = 500; // ms
+    const AUTO_DELAY = 5000; // ms entre páginas
+    const [isVisible, setIsVisible] = useState(true);
+
+    const goToPage = (index: number) => {
+        if (!isVisible) return;
+        setIsVisible(false);
+        setTimeout(() => {
+            setCurrentPage(index);
+            setIsVisible(true);
+        }, ANIMATION_DURATION);
+    };
+
+    // auto-advance: reinicia timeout cada vez que cambia currentPage
+    useEffect(() => {
+        if (totalPages <= 1) return;
+        const t = setTimeout(() => {
+            const next = (currentPage + 1) % totalPages;
+            goToPage(next);
+        }, AUTO_DELAY);
+        return () => clearTimeout(t);
+    }, [currentPage, totalPages]);
+
     return (
         <div aria-label="Portafolio de proyectos Indeleble" className="relative font-dm-regular min-h-screen bg-black overflow-hidden">
             <div className="relative mx-auto flex min-h-screen max-w-4xl flex-col items-center px-4 py-12 md:py-16 lg:py-20">
@@ -92,86 +116,93 @@ function PortfolioComponent() {
 
                 {/* Grid de proyectos paginado */}
                 <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 mb-12">
-                    <div className="flex flex-col gap-6 md:gap-7 lg:gap-10">
-                        {rows.map((row, rowIndex) => {
-                            const [left, right] = row;
-                            const [r1, r2] = getRowRatios(rowIndex);
+                    {/* contenedor animado */}
+                    <div
+                        style={{
+                            transition: `opacity ${ANIMATION_DURATION}ms ease, transform ${ANIMATION_DURATION}ms ease`,
+                            opacity: isVisible ? 1 : 0,
+                            transform: isVisible ? "translateY(0)" : "translateY(10px)",
+                        }}
+                    >
+                        <div className="flex flex-col gap-6 md:gap-7 lg:gap-10">
+                            {rows.map((row, rowIndex) => {
+                                const [left, right] = row;
+                                const [r1, r2] = getRowRatios(rowIndex);
 
-                            return (
-                                <div
-                                    key={rowIndex}
-                                    className="grid grid-cols-1 gap-4 sm:gap-6 md:[grid-template-columns:var(--cols)]"
-                                    style={{ "--cols": `${r1}fr ${r2}fr` } as CSSProperties}
-                                >
-                                    {/* LEFT */}
-                                    {left ? (
-                                        <a
-                                            href={left.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="group relative overflow-hidden bg-white/10 block w-full
+                                return (
+                                    <div
+                                        key={rowIndex}
+                                        className="grid grid-cols-1 gap-4 sm:gap-6 md:[grid-template-columns:var(--cols)]"
+                                        style={{ "--cols": `${r1}fr ${r2}fr` } as CSSProperties}
+                                    >
+                                        {/* LEFT */}
+                                        {left ? (
+                                            <a
+                                                href={left.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="group relative overflow-hidden bg-white/10 block w-full
                          h-56 sm:h-64 md:h-72 lg:h-72"
-                                        >
-                                            <Image
-                                                src={left.image}
-                                                alt={left.category}
-                                                fill
-                                                className="object-cover group-hover:scale-110 transition-transform duration-300"
-                                                sizes="(max-width: 1024px) 100vw, 50vw"
-                                            />
-                                            <div
-                                                className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                {/* centered text and slightly larger gap */}
-                                                <div className="flex flex-col items-center gap-3 text-center">
-                                                    <p className="text-sm text-white font-medium uppercase">
-                                                        {categories[left.category]}
-                                                    </p>
-                                                    <p className="text-white font-semibold border-2 border-white py-2 px-4 rounded-full">
-                                                        Ver más
-                                                    </p>
+                                            >
+                                                <Image
+                                                    src={left.image}
+                                                    alt={left.category}
+                                                    fill
+                                                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                                />
+                                                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                                    {/* centered text and slightly larger gap */}
+                                                    <div className="flex flex-col items-center gap-3 text-center">
+                                                        <p className="text-sm text-white font-medium uppercase">
+                                                            {categories[left.category]}
+                                                        </p>
+                                                        <p className="text-white font-semibold border-2 border-white py-2 px-4 rounded-full">
+                                                            Ver más
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </a>
-                                    ) : (
-                                        // En mobile/md no mostramos el hueco; en lg sí para conservar la rejilla
-                                        <div aria-hidden className="hidden md:block h-72"/>
-                                    )}
+                                            </a>
+                                        ) : (
+                                            // En mobile/md no mostramos el hueco; en lg sí para conservar la rejilla
+                                            <div aria-hidden className="hidden md:block h-72"/>
+                                        )}
 
-                                    {/* RIGHT */}
-                                    {right ? (
-                                        <a
-                                            href={right.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="group relative overflow-hidden bg-white/10 block w-full
+                                        {/* RIGHT */}
+                                        {right ? (
+                                            <a
+                                                href={right.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="group relative overflow-hidden bg-white/10 block w-full
                          h-56 sm:h-64 md:h-72 lg:h-72"
-                                        >
-                                            <Image
-                                                src={right.image}
-                                                alt={right.category}
-                                                fill
-                                                className="object-cover group-hover:scale-110 transition-transform duration-300"
-                                                sizes="(max-width: 1024px) 100vw, 50vw"
-                                            />
-                                            <div
-                                                className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                {/* centered text and slightly larger gap */}
-                                                <div className="flex flex-col items-center gap-3 text-center">
-                                                    <p className="text-sm text-white font-medium uppercase">
-                                                        {categories[right.category]}
-                                                    </p>
-                                                    <p className="text-white font-semibold border-2 border-white py-2 px-4 rounded-full">
-                                                        Ver más
-                                                    </p>
+                                            >
+                                                <Image
+                                                    src={right.image}
+                                                    alt={right.category}
+                                                    fill
+                                                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                                />
+                                                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                                    {/* centered text and slightly larger gap */}
+                                                    <div className="flex flex-col items-center gap-3 text-center">
+                                                        <p className="text-sm text-white font-medium uppercase">
+                                                            {categories[right.category]}
+                                                        </p>
+                                                        <p className="text-white font-semibold border-2 border-white py-2 px-4 rounded-full">
+                                                            Ver más
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </a>
-                                    ) : (
-                                        <div aria-hidden className="hidden lg:block h-72"/>
-                                    )}
-                                </div>
-                            );
-                        })}
+                                            </a>
+                                        ) : (
+                                            <div aria-hidden className="hidden lg:block h-72"/>
+                                        )}
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
 
@@ -182,7 +213,7 @@ function PortfolioComponent() {
                             <button
                                 key={i}
                                 aria-label={`Ir a la página ${i + 1}`}
-                                onClick={() => setCurrentPage(i)}
+                                onClick={() => goToPage(i)}
                                 className={`transition-all duration-300 rounded-full ${
                                     i === currentPage ? "bg-white w-8 h-2 rounded-md" : "bg-white/40 w-2 h-2"
                                 }`}
