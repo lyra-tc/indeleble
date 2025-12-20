@@ -121,9 +121,15 @@ function PortfolioComponent() {
                                             />
                                             <div
                                                 className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                <p className="text-white font-semibold border-2 border-white py-2 px-4 rounded-full">
-                                                    Ver más
-                                                </p>
+                                                {/* centered text and slightly larger gap */}
+                                                <div className="flex flex-col items-center gap-3 text-center">
+                                                    <p className="text-sm text-white font-medium uppercase">
+                                                        {categories[left.category]}
+                                                    </p>
+                                                    <p className="text-white font-semibold border-2 border-white py-2 px-4 rounded-full">
+                                                        Ver más
+                                                    </p>
+                                                </div>
                                             </div>
                                         </a>
                                     ) : (
@@ -149,9 +155,15 @@ function PortfolioComponent() {
                                             />
                                             <div
                                                 className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                <p className="text-white font-semibold border-2 border-white py-2 px-4 rounded-full">
-                                                    Ver más
-                                                </p>
+                                                {/* centered text and slightly larger gap */}
+                                                <div className="flex flex-col items-center gap-3 text-center">
+                                                    <p className="text-sm text-white font-medium uppercase">
+                                                        {categories[right.category]}
+                                                    </p>
+                                                    <p className="text-white font-semibold border-2 border-white py-2 px-4 rounded-full">
+                                                        Ver más
+                                                    </p>
+                                                </div>
                                             </div>
                                         </a>
                                     ) : (
