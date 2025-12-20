@@ -16,55 +16,45 @@ import Proyecto10 from "@/assets/images/Portfolio/PortfolioComponent/Proyecto_10
 import type { CSSProperties } from "react";
 
 const categories = {
-    todos: "Todos",
-    disenios: "Diseños",
-    eventos: "Eventos",
-    redes: "Redes",
+    podcast: "Podcasts",
+    levantamientoContenido: "Levantamiento de contenido en eventos",
+    videosCortos: "Videos cortos para empresas",
+    estrategia: "Estrategia para speakers e influencers",
+    paginaWeb: "Pagina web",
+    eventos: "Organización de eventos",
 } as const;
 
 type CategoryKey = keyof typeof categories;
 
 interface Project {
     id: number;
-    title: string;
     category: CategoryKey;
     image: StaticImageData;
     link: string;
 }
 
 const projects: Project[] = [
-    { id: 1, title: "Podcast 1", category: "redes", image: Proyecto1, link: "https://www.instagram.com/reel/DJ2RuNOpjlZ/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" },
-    { id: 2, title: "Podcast 2", category: "redes", image: Proyecto2, link: "https://www.instagram.com/reel/DM0p7w8RHWj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-    { id: 3, title: "Evento 1", category: "eventos", image: Proyecto3, link: "https://www.instagram.com/reel/DJSnXvqpkIw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-    { id: 4, title: "Evento 2", category: "eventos", image: Proyecto4, link: "https://www.instagram.com/reel/DIPAaTNR_6M/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-    { id: 5, title: "Video empresas 1", category: "redes", image: Proyecto5, link: "https://www.instagram.com/reel/DM2imRSO2dV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-    { id: 6, title: "Video empresas 2", category: "redes", image: Proyecto6, link: "https://www.instagram.com/reel/DKZ7Pa6O9gc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-    { id: 7, title: "Estrategias 1", category: "redes", image: Proyecto7, link: "https://www.instagram.com/reel/DHWwKr0JZM0/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-    { id: 8, title: "Pagina web 1", category: "disenios", image: Proyecto8, link: "https://lyratech.com.mx/" },
-    { id: 9, title: "Pagina web 2", category: "disenios", image: Proyecto9, link: "https://coorider.com/" },
-    { id: 10, title: "Evento 3", category: "eventos", image: Proyecto10, link: "https://www.instagram.com/reel/DOy0lL7Ca4y/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+    { id: 1, category: "podcast", image: Proyecto1, link: "https://www.instagram.com/reel/DJ2RuNOpjlZ/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" },
+    { id: 2, category: "podcast", image: Proyecto2, link: "https://www.instagram.com/reel/DM0p7w8RHWj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+    { id: 3, category: "levantamientoContenido", image: Proyecto3, link: "https://www.instagram.com/reel/DJSnXvqpkIw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+    { id: 4, category: "levantamientoContenido", image: Proyecto4, link: "https://www.instagram.com/reel/DIPAaTNR_6M/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+    { id: 5, category: "videosCortos", image: Proyecto5, link: "https://www.instagram.com/reel/DM2imRSO2dV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+    { id: 6, category: "videosCortos", image: Proyecto6, link: "https://www.instagram.com/reel/DKZ7Pa6O9gc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+    { id: 7, category: "videosCortos", image: Proyecto7, link: "https://www.instagram.com/reel/DHWwKr0JZM0/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+    { id: 8, category: "paginaWeb", image: Proyecto8, link: "https://lyratech.com.mx/" },
+    { id: 9, category: "paginaWeb", image: Proyecto9, link: "https://coorider.com/" },
+    { id: 10, category: "eventos", image: Proyecto10, link: "https://www.instagram.com/reel/DOy0lL7Ca4y/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
 ];
 
 function PortfolioComponent() {
-    const [activeCategory, setActiveCategory] = useState<CategoryKey>("todos");
-
     // Nuevo estado para paginación
     const itemsPerPage = 8; // Mostrar 8 elementos por página (4 filas si hay 2 columnas)
     const [currentPage, setCurrentPage] = useState(0);
 
-    // Filtrado por categoría (sin paginar)
-    const filtered = activeCategory === "todos"
-        ? projects
-        : projects.filter(p => p.category === activeCategory);
+    // Calcular número de páginas sobre todos los proyectos
+    const totalPages = Math.ceil(projects.length / itemsPerPage);
 
-    // Calcular número de páginas
-    const totalPages = Math.ceil(filtered.length / itemsPerPage);
-
-    // Ajustar currentPage si la categoría cambia o si el número de páginas cambia
-    useEffect(() => {
-        setCurrentPage(0);
-    }, [activeCategory]);
-
+    // Ajustar currentPage si el número de páginas cambia
     useEffect(() => {
         if (currentPage >= totalPages) {
             setCurrentPage(Math.max(0, totalPages - 1));
@@ -73,7 +63,7 @@ function PortfolioComponent() {
 
     // Proyectos a mostrar en la página current
     const start = currentPage * itemsPerPage;
-    const pagedProjects = filtered.slice(start, start + itemsPerPage);
+    const pagedProjects = projects.slice(start, start + itemsPerPage);
 
     // Agrupar en filas de 2
     const rows: (Project | null)[][] = [];
@@ -100,25 +90,6 @@ function PortfolioComponent() {
                     </p>
                 </div>
 
-                {/* Categorías - Switch */}
-                <div className="w-full max-w-4xl mb-16">
-                    <div className="flex flex-wrap justify-center gap-4">
-                        {Object.entries(categories).map(([key, label]) => (
-                            <button
-                                key={key}
-                                onClick={() => setActiveCategory(key as CategoryKey)}
-                                className={`px-6 md:px-8 py-2 md:py-3 rounded-full font-medium transition-all duration-300 border ${
-                                    activeCategory === key
-                                        ? "bg-white text-black border-white"
-                                        : "bg-transparent text-white border-white/30 hover:border-white"
-                                }`}
-                            >
-                                {label}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-
                 {/* Grid de proyectos paginado */}
                 <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 mb-12">
                     <div className="flex flex-col gap-6 md:gap-7 lg:gap-10">
@@ -143,7 +114,7 @@ function PortfolioComponent() {
                                         >
                                             <Image
                                                 src={left.image}
-                                                alt={left.title}
+                                                alt={left.category}
                                                 fill
                                                 className="object-cover group-hover:scale-110 transition-transform duration-300"
                                                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -171,7 +142,7 @@ function PortfolioComponent() {
                                         >
                                             <Image
                                                 src={right.image}
-                                                alt={right.title}
+                                                alt={right.category}
                                                 fill
                                                 className="object-cover group-hover:scale-110 transition-transform duration-300"
                                                 sizes="(max-width: 1024px) 100vw, 50vw"
