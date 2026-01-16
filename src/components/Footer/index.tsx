@@ -109,7 +109,7 @@ function Footer() {
                                 <iframe
                                     title="Ubicación"
                                     className="h-full w-full"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.23655084228!2d-100.38421562529636!3d20.619212701720087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d345ce4f4765e9%3A0x49deb15363175ee6!2sByggir%20%26%20Co.%20Solutions!5e0!3m2!1ses!2sde!4v1762427885980!5m2!1ses!2sde"
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3732.4636421199352!2d-100.44693756103516!3d20.691389083862305!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d3573c9b7e46a5%3A0x8766a48f3d080c46!2sBL%20Comcenters%20Juriquilla%202!5e0!3m2!1ses!2sde!4v1768604314191!5m2!1ses!2sde"
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
                                 />
