@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import WhatsappButton from "@/components/Home/WhatsappButton";
 import Hero from "@/components/Home/HeroHome";
 import AboutUs from "@/components/Home/AboutUsHome";
-import Team from "@/components/Home/TeamHome";
+//import Team from "@/components/Home/TeamHome";
 import Services from "@/components/Home/Services";
 import Brands from "@/components/Home/Brands";
 import PortafolioHome from "@/components/Home/PortafolioHome";
