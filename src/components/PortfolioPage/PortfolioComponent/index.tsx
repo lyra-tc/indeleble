@@ -71,6 +71,22 @@ function PortfolioComponent() {
         }
     }, [totalPages, currentPage]);
 
+    // AUTO-SLIDE cada 6s
+    useEffect(() => {
+        if (totalPages <= 1) return;
+
+        const id = window.setInterval(() => {
+        setCurrentPage(prev => (prev + 1) % totalPages);
+        }, 6000);
+
+        return () => window.clearInterval(id);
+    }, [totalPages]);
+
+    //Helper para que cuando el usuario haga click, no choque con el interval
+    const goToPage = (i: number) => {
+        setCurrentPage(i);
+    };
+
     // Proyectos a mostrar en la página current
     const start = currentPage * itemsPerPage;
     const pagedProjects = filtered.slice(start, start + itemsPerPage);
@@ -199,7 +215,7 @@ function PortfolioComponent() {
                             <button
                                 key={i}
                                 aria-label={`Ir a la página ${i + 1}`}
-                                onClick={() => setCurrentPage(i)}
+                                onClick={() => goToPage(i)}
                                 className={`transition-all duration-300 rounded-full ${
                                     i === currentPage ? "bg-white w-8 h-2 rounded-md" : "bg-white/40 w-2 h-2"
                                 }`}
