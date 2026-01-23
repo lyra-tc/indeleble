@@ -7,7 +7,7 @@ import { HiArrowLongRight } from "react-icons/hi2";
 import Facebook from "@/assets/images/Footer/Facebook.png";
 import WhatsApp from "@/assets/images/Footer/WhatsApp.png";
 import Instagram from "@/assets/images/Footer/Instagram.png";
-import { m } from "framer-motion";
+//import { m } from "framer-motion";
 
 const LINKS = [
     { href: "/", label: "Inicio" },
