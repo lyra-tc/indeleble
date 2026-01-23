@@ -16,7 +16,7 @@ function HeroHome() {
     useEffect(() => {
         const id = setInterval(() => {
             setIndex((i) => (i + 1) % BG_IMAGES.length);
-        }, 2000);
+        }, 12000);
         return () => clearInterval(id);
     }, []);
 
@@ -32,8 +32,8 @@ function HeroHome() {
                         alt={`Fondo ${i + 1}`}
                         fill
                         priority={i === 0}
-                        className={`select-none pointer-events-none transition-opacity duration-700 ease-out ${
-                            i === index ? "opacity-100" : "opacity-0"
+                        className={`select-none pointer-events-none absolute inset-0 transition-opacity duration-[5000ms] ease-in-out  ${
+                            i === index ? "opacity-100" : "opacity-10"
                         }`}
                         style={{ objectFit: "fill" }}
                         sizes="100vw"

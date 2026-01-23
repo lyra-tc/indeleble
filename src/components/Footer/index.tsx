@@ -7,6 +7,7 @@ import { HiArrowLongRight } from "react-icons/hi2";
 import Facebook from "@/assets/images/Footer/Facebook.png";
 import WhatsApp from "@/assets/images/Footer/WhatsApp.png";
 import Instagram from "@/assets/images/Footer/Instagram.png";
+import { m } from "framer-motion";
 
 const LINKS = [
     { href: "/", label: "Inicio" },
@@ -20,6 +21,7 @@ function Footer() {
     const phone = "5214426767225";
     const instagram = "https://www.instagram.com/indeleble.mk/";
     const facebook = "https://www.facebook.com/indeleble.886992";
+    const mailFooter = "concierge@indeleble.com.mx"; 
 
     const [email, setEmail] = useState("");
     const [status, setStatus] = useState<"idle" | "error" | "success">("idle");
@@ -76,10 +78,10 @@ function Footer() {
                     <div className="space-y-4 flex flex-col items-center text-center md:text-left md:items-start">
                         <div className="space-y-1">
                             <a
-                                href="mailto:concierge@indeleble.com.mx" target="_blank"
+                                href={`mailto:${mailFooter}`} target="_blank"
                                 className="block text-white/90 hover:text-white transition-colors break-all"
                             >
-                                concierge@indeleble.com.mx
+                                {mailFooter}
                             </a>
                             <a
                                 href="tel:+524426767225" target="_blank"
