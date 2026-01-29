@@ -18,7 +18,7 @@ const LINKS = [
 ];
 
 function Footer() {
-    const phone = "5214426767225";
+    const phone = "5215555555555";
     const instagram = "https://www.instagram.com/indeleble.mk/";
     const facebook = "https://www.facebook.com/indeleble.886992";
     const mailFooter = "concierge@indeleble.com.mx"; 
@@ -84,10 +84,10 @@ function Footer() {
                                 {mailFooter}
                             </a>
                             <a
-                                href="tel:+524426767225" target="_blank"
+                                href="tel:+525555555555" target="_blank"
                                 className="block text-white/60 hover:text-white transition-colors"
                             >
-                                +52 442 676 7225
+                                +52 55 5555 5555
                             </a>
                         </div>
 
