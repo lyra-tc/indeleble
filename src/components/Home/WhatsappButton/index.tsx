@@ -4,7 +4,8 @@ import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
 function WhatsAppFloating() {
-    const phone = "5214426767225";
+    //const phone = "5214426767225";
+    const phone = "5215555555555";
     return (
         <Link
             href={`https://wa.me/${phone}`}
